@@ -95,16 +95,14 @@ async function handleImageSelection(event) {
 }
 
 // Komunikacja bezpośrednia z API Anthropic z poziomu przeglądarki
-// Komunikacja bezpośrednia z API Anthropic z poziomu przeglądarki
 async function analyzeImageWithAI(base64Image) {
-  // Całkowicie zmieniamy nazwy zmiennych, zero słów kluczowych:
-  const x1 = "sk-ant" + "-usr-1gK7G19et";
-  const x2 = "SrrCHmRIW6Iv5jFHi8Amy8";
-  const x3 = "uoZOtOW1VecwIn3zPulSm9g3o2jDzg8lDlBZ28XtV2G4LXz5Ma-7Dq7guyPQUwAA";
-  const systemConfig = x1 + x2 + x3;
+  // ==========================================
+  // TUTAJ WKLEJ SWÓJ PEŁNY KLUCZ API W CUDZYŁOWIE:
+  // ==========================================
+  const ANTHROPIC_API_KEY = "sk-ant-...";
 
-  if (!systemConfig || systemConfig.length < 20) {
-    throw new Error("Brak konfiguracji!");
+  if (!ANTHROPIC_API_KEY || ANTHROPIC_API_KEY.startsWith("sk-ant-...")) {
+    throw new Error("Brak poprawnego klucza API w pliku app.js!");
   }
 
   const mimeType = base64Image.split(";")[0].split(":")[1];
@@ -128,12 +126,12 @@ Zwróć odpowiedź WYŁĄCZNIE w czystym formacie JSON (bez bloków kodowych typ
     method: "POST",
     headers: {
       "content-type": "application/json",
-      "x-api-key": systemConfig.trim(),
+      "x-api-key": ANTHROPIC_API_KEY.trim(),
       "anthropic-version": "2023-06-01",
       "anthropic-dangerous-direct-browser-access": "true",
     },
     body: JSON.stringify({
-      model: "claude-opus-5-5",
+      model: "claude-3-5-sonnet-20241022",
       max_tokens: 4096,
       system: systemPrompt,
       messages: [
