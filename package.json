@@ -1,0 +1,10 @@
+{
+  "name": "antiq",
+  "version": "1.0.0",
+  "description": "AI Antique Identifier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

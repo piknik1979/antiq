@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antiq – AI Antique Identifier</title>
+    <!-- Dodany znacznik ?v=2.0 wymusza na przeglądarce pobranie świeżego CSS i JS -->
+    <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Nagłówek -->
+        <header>
+            <div class="brand">
+                <h1 class="logo">Antiq</h1>
+                <span class="tagline">AI Identifier</span>
+            </div>
+            <select id="lang-select" onchange="changeLanguage(this.value)">
+                <option value="pl">🇵🇱 PL</option>
+                <option value="en">🇬🇧 EN</option>
+            </select>
+        </header>
+
+        <!-- Wizjer / Przycisk skanowania -->
+        <div class="scanner-box" onclick="document.getElementById('file-input').click()">
+            <div class="scanner-frame">
+                <span class="scanner-icon">🏛️</span>
+            </div>
+            <p class="scanner-text" id="ui-scan-prompt">Fotografuj i eksploruj</p>
+            <input type="file" id="file-input" accept="image/*" capture="environment" style="display: none;" onchange="handleImageSelection(event)">
+        </div>
+
+        <!-- Sekcja wyników -->
+        <div id="results-section" style="display: none;">
+            <img id="image-preview" class="preview-img" alt="Zeskanowany antyk">
+            
+            <div class="card">
+                <h3 id="ui-title-label">O przedmiocie</h3>
+                <p id="res-name">-</p>
+            </div>
+
+            <div class="card">
+                <h3 id="ui-price-label">Szacowana cena</h3>
+                <p id="res-price" class="price-highlight">-</p>
+            </div>
+
+            <div class="card">
+                <h3 id="ui-history-label">Historia i styl</h3>
+                <p id="res-history">-</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skrypty z parametrem wersji zapobiegającym buforowaniu -->
+    <script src="config.js?v=2.0"></script>
+    <script src="app.js?v=2.0"></script>
+</body>
+</html>

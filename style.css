@@ -1,0 +1,147 @@
+:root {
+    --bg-emerald: #0D231A;      /* Głęboki szmaragd */
+    --card-ivory: #F9F6F0;      /* Elegancka kość słoniowa */
+    --text-dark: #1F2421;       /* Ciemny grafit tekstu */
+    --gold-primary: #D4AF37;    /* Szlachetne złoto */
+    --gold-muted: #8C733E;      /* Stonowane złoto na nagłówki */
+    --card-shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-emerald);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--card-ivory);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Branding Antiq */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold-primary);
+    margin: 0;
+}
+
+.tagline {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(249, 246, 240, 0.6);
+}
+
+#lang-select {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Skaner Antiq */
+.scanner-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px dashed var(--gold-primary);
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scanner-box:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.scanner-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.15);
+    margin-bottom: 12px;
+}
+
+.scanner-icon {
+    font-size: 28px;
+}
+
+.scanner-text {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--card-ivory);
+    margin: 0;
+}
+
+/* Karty z wynikami */
+.card {
+    background-color: var(--card-ivory);
+    color: var(--text-dark);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 25px var(--card-shadow);
+}
+
+.card h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gold-muted);
+    margin: 0 0 8px 0;
+}
+
+.card p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.price-highlight {
+    font-size: 20px !important;
+    font-weight: 700;
+    color: #0D231A;
+}
+
+.preview-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    border: 2px solid var(--gold-primary);
+}
