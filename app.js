@@ -99,7 +99,8 @@ async function analyzeImageWithAI(base64Image) {
   // ==========================================
   // TUTAJ WKLEJ SWÓJ PEŁNY KLUCZ API W CUDZYŁOWIE:
   // ==========================================
-  const ANTHROPIC_API_KEY = "sk-ant-...";
+  const ANTHROPIC_API_KEY =
+    "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";
 
   if (!ANTHROPIC_API_KEY || ANTHROPIC_API_KEY.startsWith("sk-ant-...")) {
     throw new Error("Brak poprawnego klucza API w pliku app.js!");
